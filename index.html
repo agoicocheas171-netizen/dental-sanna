@@ -1,164 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dental Sanna | Sonríe con confianza</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Sanna</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <style>
-    :root {
-      --negro: #0a0a0a;
-      --dorado: #c9a227;
-      --blanco: #ffffff;
-      --rosa: #f9f4f6;
-    }
-    * { box-sizing: border-box; }
     body {
+      font-family: 'Open Sans', sans-serif;
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--negro);
-      color: var(--blanco);
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
     }
     header {
-      background: var(--negro);
+      background: #0077b6;
+      color: white;
+      text-align: center;
       padding: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-bottom: 2px solid var(--dorado);
     }
     header img {
-      height: 60px;
-      margin-right: 15px;
-      border-radius: 8px;
+      width: 80px;
+      margin-bottom: 10px;
     }
-    header h1 {
-      color: var(--dorado);
-      font-size: 1.8em;
-      margin: 0;
-    }
-    .hero {
+    nav {
+      background: #023e8a;
+      padding: 10px;
       text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(180deg, var(--negro), var(--rosa));
-      animation: fadeIn 1.5s ease-in;
     }
-    .hero h2 {
-      font-size: 2.5em;
-      color: var(--dorado);
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .hero p {
-      max-width: 600px;
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
       margin: 20px auto;
-      color: var(--blanco);
+      max-width: 400px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 15px;
     }
     .cta {
       display: inline-block;
-      padding: 12px 20px;
       margin-top: 20px;
-      background: var(--dorado);
-      color: var(--negro);
-      font-weight: bold;
-      border-radius: 8px;
+      padding: 10px 20px;
+      background: #0096c7;
+      color: white;
+      border-radius: 5px;
       text-decoration: none;
-      transition: transform 0.3s ease;
+      transition: background 0.3s;
     }
     .cta:hover {
-      transform: scale(1.05);
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-      animation: fadeInUp 1s ease;
-    }
-    section h3 {
-      color: var(--dorado);
-      margin-bottom: 20px;
-    }
-    .card {
-      background: var(--rosa);
-      color: var(--negro);
-      border-radius: 10px;
-      padding: 20px;
-      margin: 10px auto;
-      max-width: 400px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .map {
-      margin-top: 20px;
-      border: 2px solid var(--dorado);
-      border-radius: 10px;
-      overflow: hidden;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    iframe {
-      width: 100%;
-      height: 300px;
-      border: 0;
-    }
-    footer {
-      background: var(--negro);
-      color: var(--blanco);
-      text-align: center;
-      padding: 20px;
-      border-top: 2px solid var(--dorado);
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      background: #00b4d8;
     }
   </style>
 </head>
 <body>
-  <header>
+  <header data-aos="fade-down">
     <img src="logo.jpeg" alt="Logo Dental Sanna">
     <h1>Dental Sanna</h1>
   </header>
 
-  <section class="hero">
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <section id="inicio" data-aos="fade-up">
     <h2>Sonríe con confianza</h2>
-    <p>Atención odontológica integral: limpieza, ortodoncia, estética dental. Citas previa coordinación por WhatsApp.</p>
+    <p>Atención odontológica integral: limpieza, ortodoncia, estética dental.</p>
     <a class="cta" href="https://wa.me/51931703595" target="_blank">Agendar por WhatsApp</a>
   </section>
 
-  <section>
-    <h3>Servicios principales</h3>
-    <div class="card">
+  <section id="servicios">
+    <h3 data-aos="fade-right">Servicios principales</h3>
+    <div class="card" data-aos="zoom-in">
       <h4>Limpieza dental</h4>
       <p>Elimina placa y sarro para mantener encías saludables.</p>
     </div>
-    <div class="card">
+    <div class="card" data-aos="zoom-in" data-aos-delay="200">
       <h4>Ortodoncia</h4>
       <p>Tratamientos modernos para alinear tu sonrisa.</p>
     </div>
-    <div class="card">
+    <div class="card" data-aos="zoom-in" data-aos-delay="400">
       <h4>Estética dental</h4>
       <p>Carillas, blanqueamiento y resinas para una sonrisa perfecta.</p>
     </div>
   </section>
 
-  <section>
+  <section id="equipo" data-aos="fade-left">
+    <h3>Nuestro equipo</h3>
+    <p>Profesionales altamente capacitados para cuidar tu salud bucal.</p>
+  </section>
+
+  <section id="contacto" data-aos="fade-up">
     <h3>Ubicación</h3>
     <p>Jirón Dos de Mayo 1681, Celendín, Cajamarca, Perú</p>
-    <div class="map">
-      <iframe src="https://maps.google.com/maps?q=Jirón%20Dos%20de%20Mayo%201681,%20Celendín,%20Perú&z=16&output=embed" loading="lazy"></iframe>
-    </div>
+    <iframe src="https://maps.google.com/maps?q=Jirón%20Dos%20de%20Mayo%201681,%20Celendín,%20Perú&z=16&output=embed" width="100%" height="300" style="border:0;" loading="lazy"></iframe>
   </section>
 
   <footer>
     <p>© <span id="year"></span> Dental Sanna | Celendín, Cajamarca</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
   </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    AOS.init({
+      duration: 1000, // duración de animaciones
+      once: true      // animar solo una vez
+    });
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

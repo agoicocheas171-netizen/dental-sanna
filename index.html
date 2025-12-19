@@ -11,45 +11,80 @@
       font-family: 'Open Sans', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      background: #fff; /* blanco */
+      color: #000; /* negro */
     }
     header {
-      background: #0077b6;
-      color: white;
+      background: #000; /* negro */
+      color: #f5e6e8; /* rosa pálido */
       text-align: center;
       padding: 20px;
+      position: relative;
     }
     header img {
       width: 80px;
       margin-bottom: 10px;
     }
-    nav {
-      background: #023e8a;
-      padding: 10px;
-      text-align: center;
+    /* Botón hamburguesa */
+    .menu-btn {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      color: #ffd700; /* dorado */
+      background: none;
+      border: none;
     }
-    nav a {
-      color: white;
-      margin: 0 15px;
+    /* Barra lateral */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #000; /* negro */
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+    .sidebar a {
+      padding: 10px 20px;
       text-decoration: none;
-      font-weight: bold;
+      font-size: 18px;
+      color: #ffd700; /* dorado */
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #f5e6e8; /* rosa pálido */
+      color: #000;
+    }
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 30px;
+      color: #ffd700;
+      cursor: pointer;
     }
     section {
       padding: 50px 20px;
       text-align: center;
     }
     .card {
-      background: white;
+      background: #f5e6e8; /* rosa pálido */
       border-radius: 8px;
       padding: 20px;
       margin: 20px auto;
       max-width: 400px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      color: #000;
     }
     footer {
-      background: #0077b6;
-      color: white;
+      background: #000;
+      color: #ffd700; /* dorado */
       text-align: center;
       padding: 15px;
     }
@@ -57,29 +92,33 @@
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
-      background: #0096c7;
-      color: white;
+      background: #ffd700; /* dorado */
+      color: #000;
       border-radius: 5px;
       text-decoration: none;
       transition: background 0.3s;
     }
     .cta:hover {
-      background: #00b4d8;
+      background: #f5e6e8; /* rosa pálido */
+      color: #000;
     }
   </style>
 </head>
 <body>
   <header data-aos="fade-down">
+    <button class="menu-btn" onclick="openNav()">☰</button>
     <img src="logo.jpeg" alt="Logo Dental Sanna">
     <h1>Dental Sanna</h1>
   </header>
 
-  <nav>
+  <!-- Barra lateral -->
+  <div id="mySidebar" class="sidebar">
+    <span class="close-btn" onclick="closeNav()">×</span>
     <a href="#inicio">Inicio</a>
     <a href="#servicios">Servicios</a>
     <a href="#equipo">Equipo</a>
     <a href="#contacto">Contacto</a>
-  </nav>
+  </div>
 
   <section id="inicio" data-aos="fade-up">
     <h2>Sonríe con confianza</h2>
@@ -123,11 +162,16 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     AOS.init({
-      duration: 1000, // duración de animaciones
-      once: true      // animar solo una vez
+      duration: 1000,
+      once: true
     });
+
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
   </script>
 </body>
 </html>
-
-
